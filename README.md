@@ -3,7 +3,7 @@
 
 - Link video tutorial: https://www.youtube.com/watch?v=C_qvQo7PJMU
 
-VER SE O RUNTIME VERSÃO MUDOU/ ERA "runtime": "vercel-php@0.7.0"  
+VER SE O Arquivo vercel.json se o RUNTIME VERSÃO MUDOU/ ERA "runtime": "vercel-php@0.7.0"  
 - Link Repositório Runtime: https://github.com/vercel-community/php 
 - Link arquivo vercel.json: (MEGA) https://mega.nz/file/5LAgVTCJ#4xy41RlpW6Ad243cJZqiz5cy08Y3sYUsBT7prSD86eI
 - Estrutura necessária: https://i.imgur.com/csaOlM1.png
