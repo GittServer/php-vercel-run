@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 
 // Era: index.php // completo!
 
