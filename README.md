@@ -31,4 +31,5 @@ Caso tenha mudado atualizar no meu arquivo "vercel.json"
 }
 ```
 - Link do site na Vercel.app: https://php-vercel-run.vercel.app/
+- https://php-vercel-run.vercel.app/api/conexao.php
 - Link do projeto na Vercel: https://vercel.com/cybertechnet-hotmailcom/php-vercel-run
