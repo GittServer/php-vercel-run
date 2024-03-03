@@ -2,7 +2,7 @@
 - Rodando PHP no site/host Vercel.app
 
 - Link video tutorial: https://www.youtube.com/watch?v=C_qvQo7PJMU
-- Link Repositório Runtime: https://github.com/vercel-community/php
+- Link Repositório Runtime: https://github.com/vercel-community/php (VER SE O RUNTIME VERSÃO MUDOU/ ERA "runtime": "vercel-php@0.7.0")
 - Link arquivo vercel.json: (MEGA) https://mega.nz/file/5LAgVTCJ#4xy41RlpW6Ad243cJZqiz5cy08Y3sYUsBT7prSD86eI
 - Estrutura necessária: https://i.imgur.com/csaOlM1.png
 
@@ -18,10 +18,10 @@
 
 ```
 {
-    "functions": {
-      "api/*.php": {
-        "runtime": "vercel-php@0.4.0"
-      }
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.0"
     }
   }
+}
 ```
