@@ -49,14 +49,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             </div>
         <?php endif; ?>
         <!-- <form name="login-form" action="login.php" method="POST"> -->
-        <form name="login-form" action="index.php" method="POST">    
-            <label for="email">E-mail:</label>
+        <form name="login-form" action="login.php" method="POST">    
+            <label for="email">E-mail</label>
             <input type="text" name="email">
             <br>
-            <label for="password">Senha:</label>
+            <label for="password">Password</label>
             <input type="password" name="password">
             <br>
-            <input type="submit" name="submit" value="Entrar">
+            <input type="submit" name="submit" value="Sign in">
         </form>
     </body>
 </html>
