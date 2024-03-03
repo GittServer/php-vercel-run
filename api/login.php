@@ -4,7 +4,7 @@ session_start();
 
 // If user is logged in, redirect him to index.php
 if (isset($_SESSION['identity'])) {
-    header('Location: index.php');
+    header('Location: api/index.php');
     exit;
 }
 
