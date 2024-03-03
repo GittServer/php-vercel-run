@@ -17,14 +17,13 @@ if (isset($_SESSION['identity'])) {
     <body>
         <h1>Home PHP</h1>
         <?php if ($identity==null): ?>
-        <a href="login.php">Sign in</a>
+        <a href="login.php">Login</a>
         <?php else: ?>
         <strong>Welcome, <?= $identity ?></strong> <a href="logout.php">Sign out</a>
         <?php endif; ?>
         
         <p>
-            This is a simple website to demonstrate the advantages of a PHP framework
-            and disadvantages of "pure" PHP.
+            Este é um site simples para demonstrar as vantagens de um framework PHP e as desvantagens do PHP "puro".
         </p>
     </body>
 </html>
