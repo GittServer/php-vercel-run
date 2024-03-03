@@ -4,7 +4,7 @@ session_start();
 
 // If user is logged in, redirect him to index.php
 if (isset($_SESSION['identity'])) {
-    header('Location: api/index.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $_SESSION['identity'] = $email;
         
         // Redirect the user to index.php.
-        header('Location: api/index.php');
+        header('Location: index.php');
         exit;
     }
 }
@@ -45,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 Invalid credentials.
             </div>
         <?php endif; ?>
-        <form name="login-form" action="api/login.php" method="POST">
+        <!-- <form name="login-form" action="login.php" method="POST"> -->
+        <form name="login-form" action="index.php" method="POST">    
             <label for="email">E-mail:</label>
             <input type="text" name="email">
             <br>
