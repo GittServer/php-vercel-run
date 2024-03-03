@@ -15,7 +15,8 @@
 #
 
 - Estrutura do arquivo vercel.json:
-'''
+
+```
 {
     "functions": {
       "api/*.php": {
@@ -23,4 +24,4 @@
       }
     }
   }
-'''
+```
