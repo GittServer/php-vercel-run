@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<!-- UPLOAD NO VERCEL.APP -->
+<head>
+    <title>Eletro Tech.</title>
+    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    
+    <link rel="stylesheet" href="css/source.css">
+    <link rel="stylesheet" href="css/temas/dark.css" id="theme">
+    <script src="js/site.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+<!-- SUBSCRIBER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/mqttws31.js" type="text/javascript"></script>
+<!-- SUBSCRIBER FIM -->
+
+<!-- FUNÇÃO ALEATÓRIA -->
+	<script>
+		function mudarValor() {
+			var valor1 = Math.floor(Math.random() * 11) + 90;
+			var valor2 = Math.floor(Math.random() * 11) + 90;
+			var valor3 = Math.floor(Math.random() * 11) + 90;
+			var valor4 = Math.floor(Math.random() * 11) + 90;
+			var valor5 = Math.floor(Math.random() * 11) + 90;
+			var valor6 = Math.floor(Math.random() * 11) + 90;
+			var valor7 = Math.floor(Math.random() * 11) + 90;
+			var valor8 = Math.floor(Math.random() * 11) + 90;
+			// Gera um número aleatório entre 90 e 100
+			
+			document.getElementById("valor1").innerHTML = valor1 + "%";
+			document.getElementById("valor2").innerHTML = valor2 + "%";
+			document.getElementById("valor3").innerHTML = valor3 + "%";
+			document.getElementById("valor4").innerHTML = valor4 + "%";
+			document.getElementById("valor5").innerHTML = valor5 + "%";
+			document.getElementById("valor6").innerHTML = valor6 + "%";
+			document.getElementById("valor7").innerHTML = valor7 + "%";
+			document.getElementById("valor8").innerHTML = valor8 + "%";
+			// Define o valor no elemento com ID "valor"
+		}
+		setInterval(mudarValor, 5000); // Chama a função "mudarValor" a cada 5 segundos (5000 milissegundos)
+	</script>
+<!-- FUNÇÃO ALEATÓRIA FIM -->  
+
+<!-- NOVOS BOTOES -->
+<style>
+/* General button style */
+.btn {
+	border: none;
+	font-family: 'Lato';
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 5px; //25x80 (5x20)
+	display: inline-block;
+	margin: 15px 30px; //15x30
+	text-transform: uppercase; // uppercase
+	letter-spacing: 1px;
+	font-weight: 100; //700
+	outline: none;
+	position: uppercase; // relative
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: ; // absolute
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'FontAwesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: ; // relative
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator 
+.btn-sep {
+	padding: 5px 10px 5px 12px; // 25 60 25 120
+}
+
+.btn-sep:before {
+	background: rgba(0,0,0,0.15);
+} */
+
+/* Button 1 */
+.btn-1 {
+	background: blue; // 3498db
+	color: #fff;
+}
+
+.btn-1:hover {
+	background: #2980b9;
+}
+
+.btn-1:active {
+	background: #2980b9;
+	top: 2px;
+}
+
+.btn-1:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Button 2 */
+.btn-2 {
+	background: #2ecc71;
+	color: #fff;
+}
+
+.btn-2:hover {
+	background: #27ae60;
+}
+
+.btn-2:active {
+	background: #27ae60;
+	top: 2px;
+}
+
+.btn-2:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Button 3 */
+.btn-3 {
+	background: #e74c3c;
+	color: #fff;
+}
+
+.btn-3:hover {
+	background: #c0392b;
+}
+
+.btn-3:active {
+	background: #c0392b;
+	top: 2px;
+}
+
+.btn-3:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Button 4 */
+.btn-4 {
+	background: #34495e;
+	color: #fff;
+}
+
+.btn-4:hover {
+	background: #2c3e50;
+}
+
+.btn-4:active {
+	background: #2c3e50;
+	top: 2px;
+}
+
+.btn-4:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Icons 
+
+.icon-cart:before {
+	content: "\f07a";
+}
+
+.icon-heart:before {
+	content: "\f55a";
+}
+
+.icon-info:before {
+	content: "\f05a";
+}
+
+.icon-send:before {
+	content: "\f1d8";
+} */
+</style>
+<!-- NOVOS BOTOES FIM -->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar close">
+            <div class="logo-content">
+                <img src="./img/logo.png">
+                <h1>Eletro Tech.</h1>
+                <button class="toggle-button-mobile">&#9776;</button>
+            </div>
+            <a href="#sobre"><i class="material-icons">home</i> Sobre Nós</a>
+             <a href="#nossos bots"><i class="material-icons">person</i> Nossos Bots</a>
+            <a href="#bots"><i class="material-icons">person</i> Bots a Venda</a>
+            <a href="#valores"><i class="material-icons">shopping_cart</i> Bots Valores</a>
+            <a href="#clientes"><i class="material-icons">person</i> Automações</a>
+              <a href="#valorautom"><i class="material-icons">shopping_cart</i> Automações  + Infos</a>
+            <a href="#interfaces"><i class="material-icons">person</i> Interfaces Web</a>
+           <nav> <ul>
+		<!-- <li><a href="http://alternight.ml:10009/"> Login!</a></li> -->
+		<li><a href="https://site-karen-ia.vercel.app/"> Karen IA!</a></li>
+                        </ul>
+                    </nav>          
+            <p><i class="material-icons">shopping_cart</i> Veja nosso E-shop:</p>
+           <nav> <ul>
+<li><a href="https://eletrotechshop.mercadoshops.com.br/">Eletrônicos</a></li>
+                        </ul>
+                    </nav>
+                   
+        </div>
+
+        <div class="content">
+            <div class="header">
+                <button class="toggle-button">&#9776;</button>
+                <img src="./img/logo.png">
+                <h1>Eletro Tech</h1>
+                <div class="theme-selector">
+                    <label for="theme-select">Tema</label>
+                    <select id="theme-select" onchange="changeTheme(this.value)">
+                        <option value="dark">Padrão</option>
+                        <option value="light">Claro</option>
+                        <option value="dark">Escuro</option>
+                        <option value="orange">Laranja</option>
+                        <option value="marine">Azul</option>
+                    </select>
+                </div>
+            </div>
+            <div class="content-container">           <section_indice id="sobre">
+                    
+                <BR><h2>.............</h2>
+               <p>Bots e Automações</p></section>
+               
+                <section id="vazio"><BR>
+                    <h2>Sobre Nós:</h2>
+                    <p>Nossa empresa é especialista na criação de Bots para Discord, desde pequenos assistentes de
+                        servidores
+                        que ajudam no controle de mensagens, usuários e nas configurações do seu servidor, até bots mais
+                        complexos.</p>
+                    <p>Que utilizam Inteligência Artificial assim como o Chat GPT.</p>
+                    <p>Como também sistemas de gerenciamento de lembretes, avisos e troca de mensagens, bots
+                        personalizados com
+                        características humanas.</p>
+                        <p>==============</p>
+               <p>Nós da Eletro Tech desenvolvemos também Sistemas de Automação personalizados que servem para todas as áreas e setores do seu negócio, como também para uso pessoal.</p> 
+              <p>Esses sistemas permitem que tarefas diárias, semanais ou anuais, sejam executadas com eficiência e precisão de acordo com o horário e a data que o usuário escolher, eliminando a necessidade de intervenção manual.</p>
+              <p>Desde a automação de processos de negócios, análise de dados, gerenciamento de projetos, até o aprimoramento da experiência do cliente, nossos sistemas tornam mais fácil para você gerenciar suas tarefas e se concentrar em outras coisas importantes.</p>
+                    <nav>
+                        <ul>
+                            <li><a href="https://eletro-tech-shop.vercel.app/#nossos bots">Ver Bots 🔝</a></li>
+                        </ul>
+                    </nav>
+                    <p>Veja acima exemplos de alguns dos nossos bots de uso pessoal.
+                    </p>
+                </section>
+
+              <section_indice id="nossos bots">
+             </section_indice>
+
+        <section id="vazio">
+                
+<center>Nossos Bots:</center>
+<!-- ❌ -->
+
+<center>   
+<a href="https://eletro-tech-shop.vercel.app/#karen">
+  <img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Karen%20bot.jpeg"
+    width="100"
+    height="100"
+  /></a>
+
+<a href="https://eletro-tech-shop.vercel.app/#verify">
+  <img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Verify%20bot.jpeg"
+    width="100"
+    height="100"
+  /></a> 
+
+<a href="https://eletro-tech-shop.vercel.app/#gpt">
+
+  <img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Gpt%20Bot.jpeg"
+    width="100"
+    height="100"
+  /></a>        
+
+<a href="https://eletro-tech-shop.vercel.app/#gpt">
+
+  <img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Gpt%20Bot.jpeg"
+    width="100"
+    height="100"
+  /></a>        
+</center>
+
+<BR>
+<center>Clique neles para saber mais.</center>
+
+           </section>
+                           <section_indice id="karen">
+             </section_indice>   
+               
+                <section id="vazio"><BR>
+                    <h2>Nossos Bots:</h2>
+
+                    <h2>
+                        <p>Karen-IA:</p>
+                    </h2>
+                    <p>A Karen é um assistente que atualmente está disponível em nosso servidor discord.</p>
+                    <p>Ela tem as funções de responder quando você lhe perguntar algo, sendo que a cada nova mensagem
+                        ela
+                        aprende com você e com os usuários.</p>
+                    <p>Por exemplo você pede pra ela guardar algo em sua memória, aprender algo novo, uma nova frase,
+                        pergunta
+                        ou resposta, e ela faz!</p>
+                    <p>Ela envia e-mails, pode fazer pesquisas online, pesquisar o clima em tempo real.</p>
+                    <p>Faz a consulta de quando o membro X entrou no servidor.
+                        Pesquisando e lhe mostrando cargos dos usuários. Ela pode traduzir textos, lhe mostrar a data e
+                        a hora
+                        exatas e muito mais!</p>
+                    <p>E ela tem em seu script um jogo de cartas, chamado Battle Deck, onde dois membros do server
+                        poderão
+                        duelar, usando cartas de monstros, itens mágicos e criaturas místicas.</p>
+                    <p>É pura diversao!
+                    </p>
+                </section>
+
+              <section_indice id="verify">
+             </section_indice>
+
+                <section id="vazio"><BR>
+                    <h2>
+                        <p>Verify-Bot:</p>
+                    </h2>
+                    <p>Verify literalmente é a cereja do bolo dos nossos sistemas, pois ele pode fazer muito mais do que
+                        a
+                        Karen.</p>
+                    <p>Ele foi criado para controlar um outro dos nossos serviços que disponibilizamos aqui no site.</p>
+                    <p>O Verify-Bot é um sistema de gerenciamento e controle de automação residencial e automação
+                        industrial,
+                        com ele é possível receber e enviar comandos, dados e pacotes (payloads) para seu sistema de
+                        automação.
+                    </p>
+                    <p>Tudo remotamente através da internet de qualquer lugar do mundo.</p>
+                    <p>Com ele é possível definir datas e horários para que certos eventos aconteçam de forma autônoma e
+                        sem
+                        erros. É possível também usar o menu para ativar, editar e cancelar os eventos, possuindo um
+                        comando de
+                        status onde aparece quais são os eventos ativos.</p>
+                    <p>Ele envia e-mails personalizados, faz pesquisas online, do clima, da hora, da data, e até da
+                        programação
+                        dos seus canais de tv favoritos.</p>
+                    <p>Assim como ele tem um sofisticado sistema de segurança onde os usuários cadastrados e com senha
+                        poderão o
+                        usar e acessar seu menu.</p>
+                    <p>Verify é um ótimo sistema pois ele tem suporte para gerenciar mais de uma automação por vez!
+                    </p>
+                </section>
+
+              <section_indice id="gpt">
+           </section_indice>
+       
+                <section id="vazio"><BR>
+                    <h2>
+                        <p>GPT_BOT:</p>
+                    </h2>
+                    <p>Esse bot é uma boa implementação entre Discord e o tão famoso Chat GPT que conhecemos.</p>
+                    <p>Com esse bot você e os usuários do seu Discord poderão fazer perguntas e pesquisas online
+                        diretamente
+                        para a IA GPT.
+                    </p>
+                </section>
+
+              <section_indice id="bots">
+             </section_indice>
+             
+                <section id="vazio"><BR>
+                    <h2>
+                        <p>Bots a venda:</p>
+                    </h2>
+                    <p>Estes são os modelos de bots que você poderá ter em seu servidor discord.</p>
+                    <p>👩 Sofia_Bot (sua assistente)</p>
+                    <p>Lhe auxiliará em seu servidor discord de várias formas.</p>
+                    =================
+
+                    <p>🤖 GPT_BOT (IA Chat Gpt)</p>
+                    <nav>
+                        <ul>
+                            <li><a href="https://eletro-tech-shop.vercel.app/#gpt">Ver Gpt 🔝</a></li>
+                        </ul>
+                    </nav>
+                    =================
+
+                    <p>❤️ Bot Meu_Crush (bot de namoro)</p>
+                    <p>Simula um(a) garoto(a), homem ou mulher que seja seu namorado.
+                    </p>
+                </section>
+
+              <section_indice id="valores"></section_indice>
+
+                <section id="vazio"><BR>
+                    <h2>Valores dos Bots:</h2>
+
+                    <p>👩 Sofia_Bot</p>
+                    <p>💰 Valor: 45,00 R$</p>
+                    =================
+
+                    <p>🤖 GPT_BOT</p>
+                    <p>💰 Valor: 65,90 R$</p>
+                    =================
+
+                    <p>❤️ Bot Meu_Crush</p>
+                    <p>💰 Valor: 49,00 R$</p>
+
+                </section>
+                      
+              <section_indice id="clientes">
+           </section_indice>       
+		<section id="vazio">
+			<h2>Sistemas de Automação:</h2>
+			<p>Aqui você pode conferir informações e status dos sistemas de IAs, Automações e Bots que alguns dos nossos clientes possuem ativos.</p>
+			
+			<p><h2>Automação Residencial #MASTER AR000:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: Estado RS</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor1">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Operacional</p>
+			<p>Interface Web: Acesso online</p><br>
+			
+			<p><h2>Automação Residencial #AR001:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: Guarulhos SP</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor2">100%</span></p>			
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Não possui</p>
+			<p>Interface Web: Acesso online</p><br>
+			
+			<p><h2>Automação Residencial #AR002:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: Novo Hamburgo RS</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor3">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Não possui</p>
+			<p>Interface Web: Acesso online</p><br>
+			
+		   	<p><h2>Automação Residencial #AR007:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: João Pessoa BP</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor4">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Não possui</p>
+			<p>Interface Web: Acesso online</p><br>
+			
+			<p><h2>Automação Residencial #AR009:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: São Paulo SP</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor5">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Operacional</p>
+			<p>Interface Web: Acesso online</p><br>	
+			
+			<p><h2>Automação Residencial #AR014:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: Curitiba PR</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor6">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Operacional</p>
+			<p>Interface Web: Acesso online</p><br>	
+			
+			<p><h2>Automação Residencial #AR015:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: Curitiba PR</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor7">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Operacional</p>
+			<p>Interface Web: Acesso online</p><br>	
+			
+			<p><h2>Automação Industrial #AI003:</p></h2>
+			<p><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20nuvem.gif"
+    width="30"
+    height="30"
+  /></a> Status: Online</p>
+			<p>Localização: São Paulo SP</p>
+	<!-- FUNÇÃO ALEATÓRIA -->
+	<p>Servidor Local: <span id="valor8">100%</span></p>
+			<p>Atualização: ✅</p>
+			<p>IA Status: Operacional</p>
+			<p>Bot Status: Não possui</p>
+			<p>Interface Web: Acesso online</p>	
+			
+		</section>
+              
+              <section_indice id="valorautom">
+           </section_indice>
+           
+          <section id="vazio">
+              <h2>Automação residencial: o que é, como funciona e quais as vantagens?</h2>
+              
+<p><b>A automação residencial</b> já não é mais algo do futuro. Cada vez mais populares, as tecnologias utilizadas dentro de casa estão transformando em realidade o que antes era apenas ficção.</p>
+
+<p>Mas, afinal, você sabe como ela funciona? Se vale a pena adotar em sua casa ou em seus projetos de arquitetura? Ou, ainda, se é uma boa ideia investir em novidades de IoT e automação em sua empresa?</p>
+
+<p>Para você que quer saber tudo sobre o assunto, vamos explicar em que consiste esse conceito, como essa tecnologia funciona e quais benefícios você ganha ao investir nessa tendência. Confira!</p>
+
+<p><b>O que é automação residencial?</b></p>
+<p>Automação residencial diz respeito a um conjunto de tecnologias com a capacidade de programar eventos em uma casa e de tornar automático o funcionamento de diversos equipamentos.</p>
+
+<p><b>Por meio de sistemas integrados e da conexão à internet</b>, a automação residencial visa criar uma casa inteligente. Uma das tecnologias mais importantes nesse processo é a <b>IoT (Internet of Things ou Internet das Coisas)</b>, que já vem impactando o dia a dia em muitas residências.</p>
+
+<p>O objetivo é oferecer facilidades e mais praticidade aos moradores através do controle e do gerenciamento remoto da residência. Isso é feito por meio de um simples dispositivo móvel conectado à internet, como um <b>smartphone, tablet ou até um computador.</b></p>
+
+<p>Assim, você pode controlar os aparelhos de casa de qualquer lugar que estiver, usando a incrível tecnologia chamada <b>AIW - Anywhere In World ou De Qualquer Lugar do Mundo.</b> Além disso, é possível programar sensores, aparelhos eletrônicos, luzes e muito mais, para que determinado comando seja executado automaticamente.</p>
+
+<p><b>Além de facilitar a sua vida  e dos moradores, você pode ter uma casa totalmente personalizada conforme o seu estilo de vida, necessidades e hábitos.</b></p>
+
+<p><b>Como essa tecnologia funciona?</b></p>
+<p>Para criar uma automação residencial, você só precisa de aparelhos com conectividade elétrica, internet e um dos nossos  dispositivos inteligentes que farão a coleta e a troca de informações para que a automatização seja possível.</p>
+
+<p>Com o uso de Wi-fi ou Bluetooth, esse dispositivo permite que o morador controle, gerencie e programe seus aparelhos de forma remota.</p>
+
+<p>Para tornar uma casa inteira inteligente, esse processo é ampliado para diversos aparelhos. Por meio de um sistema de integração, todos os equipamentos são conectados a uma <b>Central Controladora</b> ligada às redes de internet e elétrica.</p>
+
+  <center><img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Automa%C3%A7%C3%A3o.jpeg"
+    width="260"
+    height="200"
+  /><p>Imagem meramente ilustrativa</p></center>
+              
+			<h2>Automações Valores:</h2>
+
+	<p>Envie mensagem, tire suas dúvidas.</p>
+	<p>Faça um orçamento e encomende sua Automação conosco!</p>
+		
+<!-- NOVOS BOTOES -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+<button class="btn btn-1 btn-sep icon-info" onclick="window.location.href = 'https://eletrotechshop.mercadoshops.com.br/p/contato'">✉️ Enviar Mensagem</button>
+<!-- NOVOS BOTOES FIM -->
+ 
+			</section>
+			
+              <section_indice id="interfaces">
+           </section_indice> 
+           
+          <section id="vazio">
+			<h2>Interfaces Web:</h2>
+
+			<p>Acesse nossa Interface Web clicando na imagem abaixo</p>
+			
+			<center>
+<a href="https://rede-externa.bubbleapps.io/version-test/home-login">
+  <img
+    src="https://mqtt-dashboard-10.000webhostapp.com/Img%20Interface%20Web.jpg"
+    width="100%"
+    height="150"
+  /></a></center>
+  
+  <center>Use seu E-mail e faça Login!</center>
+ 
+			</section>
+			              <section_indice id="painel1">
+           </section_indice>
+           
+          <section id="vazio">
+			<h2>Painel de Automações:</h2>
+		
+<!-- NOVOS BOTOES -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+<button class="btn btn-1 btn-sep icon-info" onclick="window.location.href = 'https://eletro-tech-shop.vercel.app/#painel1'">Start</button>
+
+<button class="btn btn-2 btn-sep icon-cart">Restart</button>
+<button class="btn btn-3 btn-sep icon-heart">Cancel</button>
+<button class="btn btn-4 btn-sep icon-send">Status</button>
+<!-- NOVOS BOTOES FIM -->
+
+<!-- SUBSCRIBER -->
+    <h2>Mensagem Broker:</h2>
+    <div id="mensagem"></div>
+
+    <script type="text/javascript">
+        
+        // Configurações MQTT
+// DADOS USADOS NA COMUNICAÇÃO:
+// Endereço do servidor Broker: broker.emqx.io / Número da Porta: 1883 / Tópico: TopVERIFY 
+
+        var mqttBroker = 'broker.emqx.io';
+        var mqttTopic = 'TopVERIFY';
+
+        // Inicializa o cliente MQTT
+        var client = new Paho.MQTT.Client(mqttBroker, 8000, 'clientId'); //ERA 8000
+
+        // Função chamada quando a conexão MQTT é estabelecida com sucesso
+        function onConnect() {
+            console.log("Conectado ao MQTT Broker");
+            client.subscribe(mqttTopic);
+        }
+
+        // Função chamada quando uma mensagem MQTT é recebida
+        function onMessageArrived(message) {
+            var payload = message.payloadString;
+            document.getElementById("mensagem").innerHTML = payload;
+        }
+
+        // Configura os callbacks do cliente MQTT
+        client.onConnectionLost = function (responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("Conexão MQTT perdida: " + responseObject.errorMessage);
+            }
+        }
+
+        client.onMessageArrived = function (message) {
+            onMessageArrived(message);
+        }
+
+        // Conecta ao MQTT Broker
+        client.connect({
+            onSuccess: onConnect,
+            useSSL: true
+        });
+    </script>
+<!-- SUBSCRIBER FIM -->
+ 
+			</section>
+	
+                <footer>
+                    <center>
+                      <BR><p>Copyright © Eletro Tech Shop 2021 - 2023</p>
+                        <p># Criado por Lucas Ávila / Versão 2.0</p>
+                    </center>
+                </footer>
+            </div>
+        </div>
+    </div>
+<!--
+</body>
+
+</html>
