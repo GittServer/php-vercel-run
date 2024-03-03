@@ -1,5 +1,8 @@
 <?php 
 // login.php
+
+// https://olegkrivtsov.github.io/using-zend-framework-3-book/html/pt-br/Introdu%C3%A7%C3%A3o_ao_Zend_Framework_3/Um_exemplo_de_site_PHP.html
+
 session_start();
 
 // If user is logged in, redirect him to index.php
