@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $_SESSION['identity'] = $email;
         
         // Redirect the user to index.php.
-        header('Location: index.php');
+        header('Location: api/index.php');
         exit;
     }
 }
