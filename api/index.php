@@ -17,9 +17,9 @@ if (isset($_SESSION['identity'])) {
     <body>
         <h1>Home PHP</h1>
         <?php if ($identity==null): ?>
-        <a href="login.php">Login</a>
+        <a href="api/login.php">Login</a>
         <?php else: ?>
-        <strong>Welcome, <?= $identity ?></strong> <a href="logout.php">Sign out</a>
+        <strong>Welcome, <?= $identity ?></strong> <a href="api/logout.php">Sign out</a>
         <?php endif; ?>
         
         <p>
