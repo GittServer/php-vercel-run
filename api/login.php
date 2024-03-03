@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 Invalid credentials.
             </div>
         <?php endif; ?>
-        <form name="login-form" action="/login.php" method="POST">
+        <form name="login-form" action="api/login.php" method="POST">
             <label for="email">E-mail:</label>
             <input type="text" name="email">
             <br>
