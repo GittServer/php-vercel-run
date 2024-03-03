@@ -3,5 +3,5 @@
 session_start();
 
 unset($_SESSION['identity']);
-header('Location: api/index.php');
+header('Location: index.php');
 exit;
